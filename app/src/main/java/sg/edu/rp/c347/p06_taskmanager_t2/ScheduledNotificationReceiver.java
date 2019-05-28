@@ -41,6 +41,5 @@ public class ScheduledNotificationReceiver extends BroadcastReceiver {
         notificationManager.notify(123, n);
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
-        throw new UnsupportedOperationException("Not yet implemented");
     }
 }
