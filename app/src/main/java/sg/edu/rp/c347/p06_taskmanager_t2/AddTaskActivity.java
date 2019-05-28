@@ -40,7 +40,7 @@ public class AddTaskActivity extends AppCompatActivity {
                 Intent i = new Intent();
 
                 Calendar cal = Calendar.getInstance();
-                cal.add(Calendar.SECOND, 5);
+                cal.add(Calendar.SECOND, Integer.parseInt(etReminder.getText().toString()));
 
                 Intent intent = new Intent(AddTaskActivity.this,
                         ScheduledNotificationReceiver.class);

@@ -7,6 +7,10 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
@@ -22,7 +26,6 @@ public class ScheduledNotificationReceiver extends BroadcastReceiver {
             NotificationChannel channel = new
                     NotificationChannel("default", "Default Channel",
                     NotificationManager.IMPORTANCE_DEFAULT);
-
             channel.setDescription("This is for default notification");
             notificationManager.createNotificationChannel(channel);
         }
@@ -35,6 +38,17 @@ public class ScheduledNotificationReceiver extends BroadcastReceiver {
         builder.setContentText(intent.getStringExtra("name"));
         builder.setSmallIcon(android.R.drawable.ic_dialog_info);
         builder.setContentIntent(pendingIntent);
+
+        //Set Ringtone
+        Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        builder.setSound(uri);
+
+        //Set Light
+        builder.setLights(Color.BLUE, 3, 2);
+
+        //Set Vibration
+        builder.setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 });
+
         builder.setAutoCancel(true);
 
         Notification n = builder.build();
