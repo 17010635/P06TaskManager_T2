@@ -24,8 +24,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, AddTaskActivity.class);
-                startActivity(i);
+
+                startActivityForResult(i,9);
             }
         });
+
+
+    }
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK && requestCode == 9) {
+
+
+        }
+
     }
 }
