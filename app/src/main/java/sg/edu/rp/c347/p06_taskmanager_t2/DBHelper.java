@@ -40,6 +40,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         Log.i("info", "dummy records inserted");
 
+
     }
 
     @Override
