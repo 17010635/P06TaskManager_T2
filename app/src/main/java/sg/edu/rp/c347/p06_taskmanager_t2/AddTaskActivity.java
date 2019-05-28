@@ -15,7 +15,7 @@ import java.util.Calendar;
 
 public class AddTaskActivity extends AppCompatActivity {
 
-    EditText etName, etDesc;
+    EditText etName, etDesc, etReminder;
     Button btnAdd, btnCancel;
     int reqCode = 123;
 
@@ -26,6 +26,7 @@ public class AddTaskActivity extends AppCompatActivity {
 
         etName = findViewById(R.id.etName);
         etDesc = findViewById(R.id.etDesc);
+        etReminder = findViewById(R.id.etReminder);
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
 

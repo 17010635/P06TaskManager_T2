@@ -60,7 +60,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    public ArrayList<String> getAllNotes() {
+    public ArrayList<String> getAllTask() {
         ArrayList<String> notes = new ArrayList<String>();
 
         String selectQuery = "SELECT " + COLUMN_ID + ","
@@ -71,8 +71,9 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 int id = cursor.getInt(0);
-                String content = cursor.getString(1);
-                notes.add("ID:" + id + ", " + content);
+                String name = cursor.getString(1);
+                String desc = cursor.getString(2);
+                notes.add(id + " " + name + "\n" + desc);
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -102,7 +103,7 @@ public class DBHelper extends SQLiteOpenHelper {
 //        return result;
 //    }
 
-    public ArrayList<Task> getAllNotes(String keyword) {
+    public ArrayList<Task> getAllTask(String keyword) {
         ArrayList<Task> notes = new ArrayList<Task>();
 
         SQLiteDatabase db = this.getReadableDatabase();

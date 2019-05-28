@@ -26,7 +26,7 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name" />
+        android:text="Description" />
 
     <EditText
         android:id="@+id/etDesc"
@@ -36,6 +36,20 @@
         android:inputType="textPersonName"
         android:text=""
         android:hint="Enter Description"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remind in seconds" />
+
+    <EditText
+        android:id="@+id/etReminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Reminder in second"
+        android:inputType="number" />
 
     <LinearLayout
         android:layout_width="wrap_content"

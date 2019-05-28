@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(i,9);
             }
         });
+
+        DBHelper dbh = new DBHelper(MainActivity.this);
+        ArrayList<String> query = dbh.getAllTask();
+        al.addAll(query);
+        dbh.close();
         aa = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, al);
 
         lvTask.setAdapter(aa);
@@ -44,7 +49,12 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK && requestCode == 9) {
-
+            al.clear();
+            DBHelper dbh = new DBHelper(MainActivity.this);
+            ArrayList<String> query = dbh.getAllTask();
+            al.addAll(query);
+            dbh.close();
+            aa.notifyDataSetChanged();
 
         }
 
