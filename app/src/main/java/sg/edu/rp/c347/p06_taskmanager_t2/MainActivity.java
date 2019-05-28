@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnAddTask = findViewById(R.id.btnAddTask);
+
+
+
+        
         lvTask = findViewById(R.id.lvTasks);
 
         btnAddTask.setOnClickListener(new View.OnClickListener() {
